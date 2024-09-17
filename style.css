@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; /*Inclui padding e bordas no total da largura e altura do elemento*/
+    font-family: "Poppins", sans-serif;
+}
+
+/* Definir fundo da página, cor do texto, peso da fonte e ajustar layout do corpo
+para usar flexbox e ocupar 100% da altura da janela de visualização */
+body {
+    background: #1B2029;
+    color: white; /*Padrão de fonte cor branca*/
+    font-weight: 500; /*Padrão de fonte semi-bold*/
+    display: flex;
+    min-height: 100vh; /*100vh/100vw significa 100% de altura/largura em relação a viewport, que é o tamanho total da tela*/
+}
+
+/* Definir o contêiner principal ('main') com largura de 50% da largura da janela de 
+visualização (viewport), usa flexbox para centralizar e alinhar o conteúdo */
+main {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h1 {
+    color: #8880FE;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Alinhar os ícones de mídia social horizontalmente usando flexbox */
+main .social-media {
+    display: flex;
+    align-content: center;
+    
+}
+
+/* Remover a decoração (sublinhado) dos links */
+main .social-media a {
+    text-decoration: none;
+}
+
+/* Definir a largura das imagens dos ícones de mídia social e aplica margens laterais */
+main .social-media img{
+    width: 36px;
+    margin-left: 3rem;
+}
+
+main .social-media a:first-child img {
+    margin-left: 0;
+}
+
+/* Adicionar uma margem superior à div .alternative */
+main .alternative {
+    margin-top: 1rem;
+}
+
+/* Definir o tamanho da fonte, peso da fonte e a cor do texto da span dentro da .alternative */
+main .alternative span {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255,255, 255, 0.3);
+    position: relative;
+}
+/* Pseudoelementos - Adicionar linhas antes e depois da span para criar um divisor visual*/
+main .alternative span::before, main .alternative span::after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 100px;
+    bottom: 50%;
+    right: 50px;
+    background: rgba(255,255, 255, 0.3);
+}
+
+/* Posicionar a linha após a span à esquerda */
+main .alternative span::after{
+    left: 50px;
+}
+
+/* usar flexbox para alinhas os itens do formulário verticalmente */
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Definir rótulos como elementos flexíveis para alinhas seus filhos verticalmente */
+main form label {
+    display: flex;
+    flex-direction: column; /*Um em baixo do outro*/
+}
+
+main form label span {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+
+main form input {
+    background: #161923;
+    width: 300px;
+    height: 50px;
+    padding: 0 0.5rem;
+    margin-top: 1rem;
+    outline: none;
+    color: rgba(166, 166, 166, 166);
+    font-size: 1rem;
+    border: 1px solid #040B18;
+    border-radius: 8px;
+}
+
+main form input[type="submit"] {
+    cursor: pointer;
+    width: 50%;
+    margin-top: 4rem;
+    border: none;
+    border-radius: 32px;
+    background: #6C63FF;
+    color: white;
+    font-size: 1.1rem;
+    transition: all .3s ease-in-out;
+}
+
+main form input[type="submit"]:hover {
+    background: #5952d4;
+}
+
+/* Definir a seção .images para usar flexbox, alinhar itens no final da linha e adicionar padding */
+section.images {
+    display: flex;
+    align-items: flex-end;
+    padding: 4rem;
+}
+
+section.images img {
+    width: 500px;
+}
+
+/* Definir um círculo decorativo com um gradiente de fundo, posicionando absolutamente
+para cobrir a seção, usando 'clip-path' para criar a forma circulas. */
+section.images .circle {
+    position: absolute; /*se não temos nenhum pai relativo, será absoluto em relação ao body*/
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #E8CBC0, #636FA4);
+    clip-path: circle(40% at right 80%);
+    z-index: -1; /*Eixo Z s- Definir a camada do elemento, fazendo com que ele fique atrás de outros elementos. */
+}
